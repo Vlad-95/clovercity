@@ -1,0 +1,40 @@
+.advantages {
+    padding: 74px 0 40px;
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 81px;
+        row-gap: 48px;
+    }
+
+    &__item {
+        .name {
+            position: relative;
+            font-size: 20px;
+            font-weight: 700;
+            color: @green;
+            padding-left: 37px;
+            margin: 0 0 15px;
+
+            svg {
+                position: absolute;
+                left: 0;
+                top: -4px;
+                width: 24px;
+                height: 24px;
+                fill: @green;
+            }
+        }
+
+        .wysiwyg {
+            padding-left: 37px;
+
+            p {
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 1.7;
+            }
+        }
+    }
+}
