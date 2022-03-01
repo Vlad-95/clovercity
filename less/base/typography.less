@@ -42,6 +42,41 @@ li:last-child {
   margin-bottom: 0;
 }
 
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 20px;
+
+  .block-title {
+    margin: 0 10px 0 0;
+  }
+
+  .more {
+    color: @green;
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 500;
+
+    svg {
+      fill: @green;
+      display: inline-block;
+      height: 14px;
+      margin-left: 7px;
+      transform: translateX(0);
+      transition: .3s;
+      vertical-align: middle;
+      width: 20px;
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
 .block-title {
   font-size: 30px;
   font-weight: 500;

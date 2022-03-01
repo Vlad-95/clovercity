@@ -1,0 +1,153 @@
+.rent-list {
+    &.mainpage {
+        background-color: #fbfbfb;
+        padding-bottom: 51px;
+    }
+
+    .slider {
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .slick-list {
+            padding: 10px 0;
+        }
+
+        .rent-list__item {
+            width: auto;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: calc(30% - 20px);
+            border: none;
+            background: @green;
+            padding: 0 0 0 3px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100px;
+            z-index: 2;
+
+            svg {
+                width: 9px;
+                height: 15px;
+                fill: @white;
+            }
+        }
+
+        &__prev {
+            left: -10px;
+            transform: rotate(180deg);
+        }
+
+        &__next {
+            right: -10px;
+        }
+    }
+
+    &__item {
+        padding: 0 10px;
+        width: 25%;
+
+        .wrap {            
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .image {
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.3s;
+                transform: scale(1);
+            }
+
+            .label {
+                position: absolute;
+                right: 9px;
+                top: 10px;
+                font-size: 11px;
+                font-weight: 700;
+                color: @white;
+                background-color: @green;
+                padding: 5px 6px;
+                border-radius: 100px;
+            }
+        }
+
+        .content {
+            padding: 33px 30px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 18px;
+            display: inline-block;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 40px;
+                height: 3px;
+                background-color: @green;
+            }
+        }
+
+        .floor {
+            margin: 22px 0 0;
+        }
+
+        .height {
+            margin: 3px 0 0;
+        }
+
+        &:hover {
+            .image {
+                img {
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+
+    &__more {
+        background-color: @green;
+        font-size: 14px;
+        font-weight: 500;
+        color: @white;
+        display: block;
+        width: 100%;
+        max-width: 230px;
+        margin: 17px auto 0;
+        padding: 17px 21px;
+
+        .arrow {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 14px;
+            fill: @white;
+            margin-left: 12px;
+            transform: translateX(0);
+            transition: 0.3s;
+        }
+
+        &:hover {
+            .arrow {
+                transform: translateX(5px);
+            }            
+        }
+    }
+}
+
+  

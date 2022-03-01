@@ -1,0 +1,67 @@
+.partners {
+    padding: 24px 0 62px;
+
+    .block-title {
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        color: @green;
+        padding-left: 37px;
+        margin: 0 0 15px;
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 24px;
+            height: 24px;
+            fill: @green;
+        }
+    }
+
+    .slider {
+        margin-top: 52px;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        &__item {
+            padding: 0 15px;
+
+            .image {
+                border: 1px solid #e9ebf0;
+                height: 170px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: calc(50% - 20px);
+            border: none;
+            background: @green;
+            padding: 0 0 0 3px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100px;
+            z-index: 2;
+
+            svg {
+                width: 9px;
+                height: 15px;
+                fill: @white;
+            }
+        }
+
+        &__prev {
+            left: -5px;
+            transform: rotate(180deg);
+        }
+
+        &__next {
+            right: -5px;
+        }
+    }
+}
