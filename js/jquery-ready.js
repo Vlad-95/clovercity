@@ -96,5 +96,15 @@ $(document).ready(function() {
             myMap.behaviors.disable('scrollZoom')
         }
     }
+
+    //О компании - слайдер
+    if ($('.about .slider').length) {
+        $('.about .slider').slick({
+            slidesToShow: 3,
+            dots: false,
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+        });   
+    }
     
 });

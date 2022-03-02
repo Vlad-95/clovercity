@@ -98,6 +98,27 @@ li:last-child {
   }
 }
 
+.page-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 26px;
+
+  &_underline {
+    position: relative;
+    padding-bottom: 25px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: @green;
+      height: 3px;
+      width: 40px;
+    }
+  }
+}
+
 .wysiwyg {
   & > *:first-child {
     margin-top: 0!important;
