@@ -1,0 +1,144 @@
+.form {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__left {
+        width: 32%;
+    }
+
+    &__right {
+        width: 68%;
+        padding-left: 50px;
+    }
+
+    &__item {
+        width: 100%;
+
+        &:not(:last-of-type) {
+            margin-bottom: 17px;
+        }
+
+        .name {
+            margin: 0 0 6px;
+            font-weight: 300;
+            font-size: 14px;
+        }
+    
+        .input,
+        .textarea {
+            border: 1px solid #dfe0e3;
+            background-color: @white;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .input {
+            height: 40px;
+            padding: 0 20px;
+        }
+
+        .textarea {
+            padding: 20px;
+            resize: none;
+            height: 120px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #dfe0e3;
+        margin-top: 47px;
+        padding-top: 21px;
+    }
+
+    &__agree {
+        position: relative;
+
+        input {
+            position: absolute;
+            opacity: 0;            
+
+            &:checked + .text:after {
+                opacity: 1;
+            }
+        }
+
+        .text {
+            position: relative;
+            font-size: 14px;
+            font-weight: 400;
+            color: @text;
+            padding-left: 57px;
+            margin: 0;
+
+            a {
+                text-decoration: underline;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                border: 1px solid #dfe0e3;
+                top: -6px;
+                left: 0;
+                background-color: @white;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: 3px;
+                width: 19px;
+                height: 13px;
+                background-image: url('../img/icons/check.svg');
+                opacity: 0;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    &__submit {
+        font-size: 14px;
+        font-weight: 500;
+        background-color: @green;
+        border: none;
+        outline: none;
+        color: @white;
+        width: 160px;
+        height: 50px;
+        position: relative;
+        text-align: left;
+        padding: 0 22px;
+
+        .icon {
+            width: 24px;
+            height: 14px;
+            fill: @white;
+            position: absolute;
+            right: 19px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            transform: translateX(0);
+            transition: 0.3s;
+        }
+
+        &:hover {
+
+            .icon {
+                transform: translateX(5px);
+            }
+            
+        }
+    }
+}
