@@ -105,6 +105,6 @@ $(document).ready(function() {
             prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
             nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
         });   
-    }
+    };
     
 });

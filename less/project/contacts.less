@@ -1,0 +1,102 @@
+.contacts {
+    .page-title {
+        margin: 0 0 28px;
+    }
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        padding-right: 165px;
+
+        &__item {
+            margin-bottom: 38px;
+
+            .name {
+                color: @green;
+                font-size: 15px;
+                font-weight: 700;
+                position: relative;
+                margin: 0;
+                padding-left: 40px;
+                line-height: 1.5;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    left: 1px;
+                    top: -1px;
+                    fill: @green;
+                }
+            }
+
+            .items {
+                display: flex;
+                flex-direction: column;
+                padding-left: 40px;
+                margin-top: 6px;
+
+                p,
+                a {
+                    margin: 0;
+                    line-height: 1.5;
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+
+                a {
+                    &:not(:last-of-type) {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            padding-left: 34px;
+            margin-top: 27px;
+
+            a {
+                &:not(:last-of-type) {
+                    margin-right: -3px;
+                }
+            }
+
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: @blue;
+            }
+        }
+    }
+
+    .media {
+        width: calc(100% - 400px);
+
+        .map {
+            width: 100%;
+            height: 580px;    
+        }
+    }
+
+    .descr {
+        margin-top: 57px;
+        padding: 60px 0 78px;
+
+        .block-title {
+            font-size: 20px;
+        }
+
+        .wysiwyg {
+            p {
+                line-height: 1.7;
+            }
+        }
+    }
+}
