@@ -1,0 +1,79 @@
+.rent {
+    .icons {
+        padding: 76px 0 36px;
+
+        &__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+
+        &__item {
+            display: flex;
+            align-items: flex-start;
+            width: calc((100% / 2) - 20px);
+            margin: 0 10px 29px;
+
+            .icon {
+                background-color: @green;
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+                transform: translateY(-10px);
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+                fill: @white;
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+
+                }
+            }
+
+            .content {
+                h4 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: @green;
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 1.45;
+                    margin-top: 10px;
+                }
+            }
+            
+        }
+    }
+
+    .rent-list {
+        padding: 57px 0 61px;
+        border-bottom: 10px solid @white;
+    }
+
+    .partners {
+        padding: 64px 0 91px;
+
+        .block-title {
+            margin: 0 0 23px;
+        }
+
+        .slider {
+            margin-top: 0;
+        }
+    }
+}

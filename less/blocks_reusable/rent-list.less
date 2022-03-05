@@ -4,6 +4,16 @@
         padding-bottom: 51px;
     }
 
+    .block-title {
+        margin: 0 0 47px;
+    }
+
+    &__cat-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 13px 0 28px;
+    }
+
     .slider {
         margin-left: -10px;
         margin-right: -10px;
@@ -41,6 +51,16 @@
 
         &__next {
             right: -10px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+
+        .rent-list__item {
+            margin-bottom: 20px;
         }
     }
 
@@ -146,6 +166,22 @@
             .arrow {
                 transform: translateX(5px);
             }            
+        }
+
+        &_upload {
+            margin: 7px auto 0;
+            max-width: 170px;
+
+            .arrow {
+                margin-left: 6px;
+                transform: rotate(90deg) translateX(0);
+            }
+
+            &:hover {
+                .arrow {
+                    transform: rotate(90deg) translateX(5px);
+                }            
+            }
         }
     }
 }

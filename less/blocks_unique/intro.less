@@ -80,7 +80,7 @@
         max-width: 700px;
         background-color: fade(@blue, 40%);
         border: 3px solid @white;
-        padding: 48px 170px 38px 48px;
+        padding: 48px 60px 38px 48px;
 
         h2 {
             color: @white;
@@ -113,6 +113,14 @@
                 margin-left: 9px;
                 vertical-align: middle;
                 display: inline-block;
+                transform: translateX(0);
+                transition: 0.3s;
+            }
+
+            &:hover {
+                svg {
+                    transform: translateX(5px);
+                }
             }
         }
     }
