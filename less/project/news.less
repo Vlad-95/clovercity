@@ -17,3 +17,170 @@
         }
     }
 }
+
+.news-detail {
+    .date {
+        font-size: 13px;
+        font-weight: 700;
+        color: @green;
+        padding-top: 6px;
+    }
+
+    .page-title {
+        color: @blue;
+        margin: 11px 0 26px;
+    }
+
+    &__back {
+        background-color: @green;
+        color: @white;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 180px;
+        display: block;
+        margin: 50px auto 0;
+        text-align: center;
+        padding: 13px 0;
+        border-radius: 100px;
+    }
+
+    &__image {
+        img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__descr {
+        position: relative;
+        margin: 54px 0;
+        padding: 0 100px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 40px;
+            height: 3px;
+            background-color: @green;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+    }
+
+    .slider {
+        margin-left: -10px;
+        margin-right: -10px;
+
+        &__item {
+            padding: 0 10px;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: calc(50% - 20px);
+            border: none;
+            background: @green;
+            padding: 0 0 0 3px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100px;
+            z-index: 2;
+
+            svg {
+                width: 9px;
+                height: 15px;
+                fill: @white;
+            }
+        }
+
+        &__prev {
+            left: -5px;
+            transform: rotate(180deg);
+        }
+
+        &__next {
+            right: -5px;
+        }
+    }
+
+    .citate {
+        margin: 72px 0 0;
+        padding: 69px 0;
+
+        &__item {
+            border: 3px solid @green;
+            background-color: fade(@green, 10%);
+            margin: 0 auto;
+            max-width: 980px;
+            padding: 76px 77px 58px;
+            position: relative;
+        }
+
+        .quote {
+            position: absolute;
+            z-index: 2;
+            width: 47px;
+            height: 47px;
+            border-right: 3px solid @green;
+            border-bottom: 3px solid @green;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: -5px;
+                top: -5px;
+                width: calc(100% + 5px);
+                height: calc(100% + 5px);
+                background-color: @white;
+                z-index: -1;
+            }
+
+            &_top {
+                top: 0;
+                left: 0;
+            }
+
+            &_bottom {
+                transform: rotate(180deg);
+                right: 0;
+                bottom: 0;
+            }
+
+            svg {
+                width: 15px;
+                height: 30px;
+                fill: @green;
+            }
+        }
+
+        .wysiwyg {
+            p {
+                font-size: 20px;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+
+        &__author {
+            margin-top: 26px;
+        }
+          
+    }
+
+    &__form {
+        padding: 39px 0 49px;
+
+        .block-title {
+            margin: 0 0 33px;
+        }
+    }
+}
