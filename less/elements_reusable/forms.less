@@ -114,6 +114,7 @@
     &__file {
         position: relative;      
         display: inline-block;  
+        cursor: pointer;
 
         input {
             position: absolute;
@@ -128,16 +129,7 @@
             padding-left: 32px;
             margin: 0;
             display: flex;
-            text-decoration: underline;
-
-            &:after {
-                content: attr(data-filename);
-                font-size: 12px;
-                left: calc(100% + 10px);
-                top: 2px;
-                position: absolute;
-                color: @green;
-            }
+            text-decoration: underline;            
                        
             svg {
                 width: 24px;
@@ -147,6 +139,27 @@
                 top: -4px;
                 fill: @blue;
             }
+        }
+    }
+
+    .file-info {
+        position: relative;
+        font-size: 14px;
+        font-weight: 400;
+        color: @text;
+        padding-left: 32px;
+        margin: 0;
+        display: flex;
+        text-decoration: underline;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 0;
+            top: -4px;
+            fill: @blue;
+            cursor: pointer;
         }
     }
 
