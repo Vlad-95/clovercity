@@ -16,6 +16,10 @@
     &__item {
         width: 100%;
 
+        &_file {
+            margin-top: 45px;
+        }
+
         &:not(:last-of-type) {
             margin-bottom: 17px;
         }
@@ -103,6 +107,45 @@
                 background-image: url('../img/icons/check.svg');
                 opacity: 0;
                 transition: 0.3s;
+            }
+        }
+    }
+
+    &__file {
+        position: relative;      
+        display: inline-block;  
+
+        input {
+            position: absolute;
+            opacity: 0;            
+        }
+
+        .text {
+            position: relative;
+            font-size: 14px;
+            font-weight: 400;
+            color: @text;
+            padding-left: 32px;
+            margin: 0;
+            display: flex;
+            text-decoration: underline;
+
+            &:after {
+                content: attr(data-filename);
+                font-size: 12px;
+                left: calc(100% + 10px);
+                top: 2px;
+                position: absolute;
+                color: @green;
+            }
+                       
+            svg {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                left: 0;
+                top: -4px;
+                fill: @blue;
             }
         }
     }

@@ -83,13 +83,37 @@
 
     .docs {
         display: flex;
+        align-items: center;
+        margin: 25px -15px 27px;
+        padding-bottom: 28px;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            bottom: 0;
+            width: calc(100% - 30px);
+            height: 1px;
+            background-color: #dfe0e3;
+        }
 
         &__item {
-            width: calc((100% / 3) - 20px);
-            
+            width: calc((100% / 3) - 30px);
+            margin: 0 15px;
 
             &:not(:last-child) {
-                border-right: 1px solid #dfe0e3;
+               position: relative;
+
+               &:after {
+                   content: '';
+                   position: absolute;
+                   width: 1px;
+                   height: 39px;
+                   background-color: #dfe0e3;
+                   right: 0;
+                   top: -12px;
+               }
             }
         }
 
@@ -112,7 +136,8 @@
         }
 
         p {
-            margin: 0;
+            margin-top: 0;
+            margin-bottom: 0;
         }
     }
 }
