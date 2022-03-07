@@ -158,6 +158,26 @@ $(document).ready(function() {
             dots: false,
             prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
             nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
-        })
+        });
+    }
+
+    //Магазин - слайдер
+    if ($('.shop-detail .gallery .slider').length) {
+        $('.shop-detail .gallery .slider').slick({
+            slidesToShow: 1,
+            fade: true,
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+        });
+    }
+
+    //Магазин: похожие магазины - слайдер
+    if ($('.similar .slider').length) {
+        $('.similar .slider').slick({
+            slidesToShow: 4,
+            dots: false,
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+        });
     }
 });
