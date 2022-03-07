@@ -1,0 +1,48 @@
+.search {
+    .result {
+        margin: 56px 0 45px;
+        font-size: 13px;
+    }
+
+    ol {
+        list-style: none;
+        margin: 0 0 78px;
+        padding: 0;
+        counter-reset: item;
+
+        li {
+            position: relative;
+            counter-increment: item;
+            padding-left: 43px;
+
+            &:not(:last-of-type) {
+                margin-bottom: 42px;
+            }
+
+            &:before {
+                content: counter(item)'.';
+                position: absolute;
+                left: 3px;
+                top: 0;
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .name {
+                font-weight: 700;
+                font-size: 20px;
+            }
+
+            .text {
+                font-size: 17px;
+                line-height: 1.6;
+                margin: 15px 0 8px;
+            }
+
+            .link {
+                font-size: 13px;
+                color: @green;
+            }
+        }
+    }
+}
