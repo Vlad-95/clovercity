@@ -136,7 +136,7 @@ $(document).ready(function() {
             dots: false,
             fade: true,
             asNavFor: '.slider-nav'
-          });
+        });
           $('.slider-nav').slick({
             slidesToShow: 5,
             slidesToScroll: 1,
@@ -148,6 +148,16 @@ $(document).ready(function() {
             infinite: false,
             prevArrow: '<button id="prev" type="button" class="slider-nav__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
             nextArrow: '<button id="next" type="button" class="slider-nav__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
-          });
+        });
+    }
+
+    //Торговая галерея - слайдер акций
+    if ($('.shop-list .news-list').length) {
+        $('.shop-list .news-list .slider').slick({
+            slidesToShow: 3,
+            dots: false,
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+        })
     }
 });

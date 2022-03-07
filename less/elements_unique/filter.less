@@ -1,0 +1,38 @@
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        position: relative;
+        border: 2px solid @green;
+        border-radius: 100px;
+        color: @text;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 11px 44px 11px 17px;
+        margin: 0 4px 4px 0;
+
+        &.active {
+            background-color: @green;
+            color: @white;
+
+            span {
+                background-color: @white;
+                color: @text;
+            }
+        }
+
+        span {
+            position: absolute;
+            right: 4px;
+            top: 3px;
+            bottom: 0;
+            background-color: @bg;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            line-height: 30px;
+            text-align: center;
+        }
+    }
+}
