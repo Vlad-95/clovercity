@@ -17,15 +17,15 @@
         list-style: none;
         font-size: 13px;
         color: @text;
-        transition: 0.3s;
-
-        &:hover {
-            color: @green;
-        }
+        transition: 0.3s;        
 
         &__item {
             &:not(:last-of-type) {
                 margin-right: 49px;
+            }
+
+            &:hover {
+                color: @green;
             }
 
             &.active {
