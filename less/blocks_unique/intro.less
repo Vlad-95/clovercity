@@ -1,4 +1,6 @@
 .intro {
+    position: relative;
+
     .slider {
         &__item {
             position: relative;
@@ -8,6 +10,8 @@
                 display: flex;
                 height: 100%;
                 align-items: center;
+                padding-top: 10px;
+                padding-bottom: 60px;
             }
 
             .image {
@@ -45,6 +49,111 @@
                     font-size: 20px;
                     line-height: 1.5;
                 }
+            }
+        }
+    }
+
+    .btns {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+        &__wrap {
+            display: flex;
+            justify-content: flex-end;
+        
+            div {
+                background-color: @green;
+                padding: 0;
+                width: 54px;
+                min-width: 54px;
+                height: 50px;
+                margin-left: -1px;
+                cursor: pointer;
+            }
+        }
+
+        .slider__prev {
+            transform: rotate(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 3px;
+
+            svg {
+                width: 9px;
+                height: 15px;
+                fill: @white;
+            }
+        }
+
+        .slider__next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                width: 9px;
+                height: 15px;
+                fill: @white;
+            }
+        }
+        
+        .slider__pause {
+            position: relative;
+
+            span {
+                position: absolute;
+                height: 15px;
+                width: 2px;
+                background-color: @white;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                transition: 0.3s;
+
+                &:nth-child(1) {
+                    right: 6px;
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(60deg);
+                    left: 7px;
+                    top: 7px;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-60deg);
+                    left: 7px;
+                    bottom: 7px;
+                    opacity: 1;
+                }
+            }
+
+            &.active {
+
+                span {
+                    &:nth-child(1) {
+                        right: 6px;
+                    }
+    
+                    &:nth-child(2) {
+                        left: 6px;
+                        top: 0px;
+                        transform: rotate(0);
+                    }
+
+                    &:nth-child(3) {
+                        opacity: 0;
+                        transform: rotate(0);
+                        left: 6px;
+                        bottom: 0;
+                    }
+                }
+                
             }
         }
     }
@@ -197,6 +306,57 @@
                     background-color: @blue;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .intro {
+       .slider {
+            &__item {
+                height: 400px;
+
+                .content {
+                    padding: 30px;
+                    
+                    h2 {
+                        font-size: 35px;
+                        margin: 0 0 20px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        .slider {
+
+            &__item {
+                height: 350px;
+
+                .wrapper {
+                    padding-top: 40px;
+                    align-items: flex-start;
+                }
+
+                .content {
+                    h2 {
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+            
+            
         }
     }
 }

@@ -47,8 +47,32 @@ $(document).ready(function() {
     //Слайдер на главной
     if ($('.intro .slider').length) {
         $('.intro .slider').slick({
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            autoplay: true,
+            autoplaySpeed: 5000
+        });
 
-        })
+        $('.intro .btns .slider__prev').click(function() {
+            $('.intro .slider').slick('slickPrev');
+        });
+
+        $('.intro .btns .slider__next').click(function() {
+            $('.intro .slider').slick('slickNext');
+        });
+
+        $('.intro .btns .slider__pause').click(function() {
+            $(this).toggleClass('active');
+
+            if (!$(this).hasClass('active')) {
+                $('.intro .slider').slick('slickPause');
+            } else {
+                $('.intro .slider').slick('slickPlay');
+            }
+            
+        });
     }    
 
     //Слайдер партнеров
@@ -56,8 +80,8 @@ $(document).ready(function() {
         $('.partners .slider').slick({
             slidesToShow: 6,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
         });   
     }
 
@@ -66,8 +90,8 @@ $(document).ready(function() {
         $('.rent-list.mainpage .slider').slick({
             slidesToShow: 4,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
         });   
     }
 
