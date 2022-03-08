@@ -100,7 +100,9 @@ $(document).ready(function() {
             {
                 breakpoint: 577,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
+                    centerMode: true,
+                    arrows: false
                 }
             }
             
@@ -114,7 +116,32 @@ $(document).ready(function() {
             slidesToShow: 4,
             dots: false,
             prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+
+            responsive: [{
+
+                breakpoint: 993,
+                settings: {
+                  slidesToShow: 3,
+                }
+          
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 577,
+                settings: {
+                    centerMode: true,
+                    slidesToShow: 1,
+                    arrows: false
+                }
+            }
+            
+            ]
         });   
     }
 

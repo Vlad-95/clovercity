@@ -56,3 +56,39 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .rent-main {
+        .icons {
+            margin-left: -10px;
+            margin-right: -10px;
+
+            &__item {
+                width: calc((100% / 3) - 20px);
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rent-main {
+        background-position: 70% 0;
+        padding: 40px 0 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rent-main {
+        .icons {
+            &__item {
+                width: 100%;
+                margin: 0 10px;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

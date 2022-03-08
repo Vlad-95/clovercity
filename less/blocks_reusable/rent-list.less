@@ -19,7 +19,8 @@
         margin-right: -10px;
 
         .slick-list {
-            padding: 10px 0;
+            padding-top: 10px!important;
+            padding-bottom: 10px!important;
         }
 
         .rent-list__item {
@@ -186,4 +187,26 @@
     }
 }
 
-  
+@media screen and (max-width: 1200px) {
+    .rent-list {
+        .slider {
+            &__prev {
+                left: 0;
+            }
+    
+            &__next {
+                right: 0;
+            }
+        }
+
+        &__item {
+            .image {
+                height: 200px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    }
+}
