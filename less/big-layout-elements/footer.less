@@ -1,5 +1,6 @@
 .footer {
     background-color: @blue;
+
     &__top {
         display: flex;
         align-items: center;
@@ -114,6 +115,123 @@
             color: @blue;
             font-size: 25px;
             margin-right: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .footer {
+        &__top {
+            padding: 30px 0 25px;
+        }
+
+        .logo {
+            svg {
+                width: 200px;
+                height: 28px;
+            }
+        }
+
+        &__bottom {
+            padding: 30px 0 40px;
+        }
+
+        .address {
+            &__item {
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .menu {
+            font-size: 13px;
+        }
+
+        .contacts {
+            .phone {
+                a {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .footer {
+        .menu {
+            column-gap: 20px;
+            margin: 0 0 0 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        &__bottom {
+            flex-wrap: wrap;
+        }
+
+        .address {
+            order: 1;
+            width: 50%;
+            max-width: none;
+        }
+
+        .menu {
+            order: 3;
+            width: 100%;
+            column-count: 1;
+            margin: 20px 0 0;
+        }
+
+        .contacts {
+            order: 2;
+            width: 50%;
+
+            .phone {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    .rights {
+        &__wrap {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer {
+        .address {
+            order: 1;
+            width: 100%;
+        }
+
+        .menu {
+            order: 3;
+            width: 100%;
+        }
+
+        .contacts {
+            order: 2;
+            width: 100%;
+            text-align: left;
+            margin: 20px 0 0;
+
+            .phone {
+                margin-bottom: 10px;
+            }
         }
     }
 }

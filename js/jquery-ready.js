@@ -1,49 +1,46 @@
 $(document).ready(function() {
     //===========Мобильное меню
-    // let body = $('body')
-    // let windowWidth = window.innerWidth;
-    // let header = $('.header');
-    // let headerWrap = $('.header__wrap');
-    // let time = header.find('.nav__item.time');
-    // let mail = header.find('.nav__item.mail');
-    // let address = header.find('.nav__item.address');
-    // let phone = header.find('.nav__item.phone')
-    // let burger = $('.burger');
-    // let windowHeight = $(window).height();
+    const body = $('body');
+    const windowWidth = window.innerWidth;
+    const header = $('.header');
+    const mobileMenu = $('.mobile-menu');
+    const smMenu = header.find('.sm-menu');
+    const city = header.find('.city');
+    const icons = header.find('.icons');
+    const smLogo = header.find('.sm-logo');
+    const phones = header.find('.phones');
+    const search = header.find('.search');
+    const menu = header.find('.nav');
+    const burger = header.find('.burger');
+    const mobileMenuClose = mobileMenu.find('.close');
+    const layer = body.find('.layer');
 
-    // if (windowWidth <= 992) {
-    //     //создаем контейнер для менюшки
-    //     let mobileMenu = $(document.createElement('div'));
-    //     let nav = $(document.createElement('div'));
-    //     mobileMenu.addClass('mobile-menu');
-    //     nav.addClass('nav');
+    if (windowWidth <= 992) {        
+        mobileMenu.find('.mobile-menu__wrap').append(smMenu.clone()); 
+        mobileMenu.find('.mobile-menu__wrap').append(menu.clone()); 
+        mobileMenu.find('.mobile-menu__wrap').append(city.clone()); 
+        mobileMenu.find('.mobile-menu__wrap').append(phones.clone()); 
+        mobileMenu.find('.mobile-menu__wrap').append(icons.clone()); 
+        mobileMenu.find('.mobile-menu__wrap').append(search.clone());               
+    }
 
-    //     headerWrap.append(mobileMenu)
-    //     mobileMenu.append(nav)
+    function showMenu() {
+        body.addClass('no-scroll');
+        layer.fadeIn();
+        mobileMenu.show("slide", { direction: "right" }, 500);
+    }
 
-    //     //клонируем элементы хедера
-    //     let mobileTime = time.clone();
-    //     let mobileMail = mail.clone();
-    //     let mobileAddress = address.clone();
-    //     let mobilePhone = phone.clone();
-        
-    //     nav.append(mobilePhone); 
-    //     nav.append(mobileMail);  
-    //     nav.append(mobileAddress);  
-    //     nav.append(mobileTime);   
-              
-    // }
+    function closeMenu() {
+        body.removeClass('no-scroll');
+        layer.fadeOut();
+        mobileMenu.hide("slide", { direction: "right" }, 500);
+    }
 
-    // function showMenu() {
-    //     let mobileMenu = $('.mobile-menu');
-
-    //     burger.toggleClass('active');
-    //     body.toggleClass('no-scroll');
-    //     mobileMenu.toggleClass('active');
-    //     console.log(1)
-    // }
-
-    // burger.click(showMenu);
+    burger.click(showMenu);
+    mobileMenuClose.click(closeMenu);
+    layer.click(function() {
+        closeMenu();
+    });
 
     //============Мобильное меню (КОНЕЦ)
 

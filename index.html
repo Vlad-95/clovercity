@@ -12,20 +12,12 @@
         <div class="header__top">
             <div class="wrapper">
                 <div class="header__wrap">
-                    <ul class="sm-menu">
-                        <li class="sm-menu__item">
-                            <a href="about.html">О компании</a>
-                        </li>
-                        <li class="sm-menu__item">
-                            <a href="javascript:;">Месторасположение</a>
-                        </li>
-                        <li class="sm-menu__item">
-                            <a href="javascript:;">Парковка</a>
-                        </li>
-                        <li class="sm-menu__item">
-                            <a href="javascript:;">Контакты</a>
-                        </li>
-                    </ul>
+                    <nav class="sm-menu">
+                        <a class="sm-menu__item" href="about.html">О компании</a>
+                        <a class="sm-menu__item" href="javascript:;">Месторасположение</a>
+                        <a class="sm-menu__item" href="javascript:;">Парковка</a>
+                        <a class="sm-menu__item" href="javascript:;">Контакты</a>
+                    </nav>
 
                     <p class="city">
                         г. Калининград, пл. Победы, д.10
@@ -79,6 +71,12 @@
                         <a href="tel:+74012388355" class="phones__item">+7 (4012) 38-83-55</a>
                         <a href="tel:+74012593300" class="phones__item">+7 (4012) 59-33-00</a>
                     </div>
+
+                    <div class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>            
         </div>
@@ -97,10 +95,19 @@
                 </div>
             </div>
         </div>
+        <div class="mobile-menu">
+            <div class="close">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-menu__wrap">
+
+            </div>
+        </div>
     </header>
     
     <main>
-        <div class="intro">
+        <!-- <div class="intro">
             <div class="slider">
                 <div class="slider__item">
                     <div class="image">
@@ -129,9 +136,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="categories">
+        <!-- <div class="categories">
             <div class="wrapper">
                 <div class="categories__wrap">
                     <a href="javascript:;" class="categories__item">
@@ -179,9 +186,9 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="promo">
+        <!-- <div class="promo">
             <div class="wrapper">
                 <div class="promo__item">
                     <div class="image">
@@ -211,9 +218,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="about-main">
+        <!-- <div class="about-main">
             <div class="wrapper">
                 <div class="about-main__wrap">
                     <div class="content">
@@ -242,15 +249,15 @@
                             <img src="img/about.png" alt="">
                         </div>
 
-                        <!-- <div class="video">
+                        <div class="video">
                             <iframe width="100%" src="https://www.youtube.com/embed/dl16e_mG6hg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="advantages">
+        <!-- <div class="advantages">
             <div class="wrapper">
                 <div class="advantages__wrap">
                     <div class="advantages__item">
@@ -315,9 +322,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="partners mainpage">
+        <!-- <div class="partners mainpage">
             <div class="wrapper">
                 <h2 class="block-title">
                     <svg>
@@ -368,9 +375,9 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="news-list mainpage">
+        <!-- <div class="news-list mainpage">
             <div class="wrapper">
                 <div class="title-row">
                     <h2 class="block-title">Новости</h2>
@@ -418,9 +425,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="rent-main">
+        <!-- <div class="rent-main">
             <div class="wrapper">
                 <h2 class="block-title block-title_underline">Аренда помещений</h2>
                 <div class="wysiwyg">
@@ -483,9 +490,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="rent-list mainpage">
+        <!-- <div class="rent-list mainpage">
             <div class="wrapper">
                 <div class="slider">
                     <div class="rent-list__item">
@@ -584,9 +591,9 @@
                     </svg>
                 </a>
             </div>
-        </div>
+        </div> -->
 
-        <div class="gallery">
+        <!-- <div class="gallery">
             <div class="wrapper">
                 <div class="gallery__wrap">
                     <a href="javascript:;" class="gallery__item">
@@ -614,7 +621,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="map" id="map"></div>
 
@@ -703,8 +710,11 @@
             </div>
             
         </div>
+
+        <div class="layer"></div>
     </main>
     <script src="js/libs/jquery-3.2.1.min.js"></script> 
+    <script src="js/libs/jquery-ui.js"></script>
     <script src="js/libs/slick.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script src="js/jquery-ready.js"></script>
