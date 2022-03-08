@@ -38,3 +38,35 @@
         }
     }
 }
+
+@media screen and (max-width: 992px) {
+    .advantages {
+        padding: 60px 0 40px;
+
+        &__wrap {
+            column-gap: 40px;
+            row-gap: 40px;
+        }
+
+        &__item {
+            .name {
+                font-size: 17px;
+            }
+
+            .wysiwyg {
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .advantages {
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+}

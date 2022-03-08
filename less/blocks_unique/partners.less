@@ -68,3 +68,33 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .partners {
+        .slider {
+            &__prev {
+                left: 0;
+            }
+
+            &__next {
+                right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .partners {
+        padding: 0 0 60px;
+
+        &.mainpage {
+            .block-title {
+                font-size: 17px;
+            }
+        }
+
+        .slider {
+            margin-top: 40px;
+        }
+    }
+}

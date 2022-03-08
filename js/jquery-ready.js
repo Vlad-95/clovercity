@@ -81,7 +81,30 @@ $(document).ready(function() {
             slidesToShow: 6,
             dots: false,
             prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+
+            responsive: [{
+
+                breakpoint: 993,
+                settings: {
+                  slidesToShow: 4,
+                }
+          
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 577,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }
+            
+            ]
         });   
     }
 
