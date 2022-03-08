@@ -38,6 +38,7 @@
             .items {
                 display: flex;
                 flex-direction: column;
+                align-items: flex-start;
                 padding-left: 40px;
                 margin-top: 6px;
 
@@ -96,6 +97,53 @@
         .wysiwyg {
             p {
                 line-height: 1.7;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .contacts {
+        .content {
+            padding-right: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .contacts {
+        .content {
+            width: 350px;
+            padding-right: 40px;
+        }
+
+        .media {
+            width: calc(100% - 350px);
+
+            .map {
+                width: 100%;
+                height: 400px;    
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contacts {
+        .content {
+            width: 100%;
+            padding-right: 0;
+            order: 2;
+        }
+
+        .media {
+            order: 1;
+            width: 100%;
+            margin-bottom: 20px;
+
+            .map {
+                width: 100%;
+                height: 300px;    
             }
         }
     }
