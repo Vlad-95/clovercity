@@ -113,3 +113,101 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .categories {
+        &__item {
+            h3 {
+                left: 20px;
+            }
+
+            &_small {
+                .arrow {
+                    left: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .categories {
+        &__wrap {
+            grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "big1 big2 big3"  
+                            "small1 small2 .";
+        }
+
+        &__item {
+            height: 380px;
+
+            h3 {
+                font-size: 17px;
+            }
+
+            &_small {
+                height: 220px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .categories {
+        &__wrap {
+            grid-template-columns: 1fr 1fr;
+        grid-template-areas: "big1 big2"  
+                            "big3 small1"
+                            "big3 small2";
+        }
+
+        &__item {
+            height: 419px;
+
+            h3 {
+                font-size: 17px;
+            }
+
+            &_small {
+                height: 200px;
+            }
+
+            .arrow {
+                left: 20px;
+                right: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .categories {
+        &__wrap {
+            grid-template-columns: 1fr;
+        grid-template-areas: "big1"
+                            "big2"
+                            "big3"
+                            "small1"
+                            "small2";
+        }
+
+        &__item {
+            height: 200px;
+
+            img {
+                width: auto;
+                height: auto;
+                object-fit: none;
+                left: 38%;
+            }
+
+            h3 {
+                font-size: 17px;
+            }
+
+            &_small {
+                height: 200px;
+            }
+        }
+    }
+}
