@@ -141,3 +141,51 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .rent {
+        .icons {
+            .content {
+                h4 {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .docs {
+            margin: 25px -10px 27px;
+
+            &__item {
+                width: calc((100% / 3) - 20px);
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rent {
+        .docs {
+            flex-wrap: wrap;
+
+            &__item {
+                width: calc((100% / 1) - 20px);
+                margin: 0 10px 20px;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .rent {
+        .icons {
+            &__item {
+                width: calc((100% / 1) - 20px);
+            }
+        }
+    }
+}
