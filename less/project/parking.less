@@ -1,6 +1,6 @@
 .parking {
     .icons {
-        padding: 56px 0 44px;
+        padding: 56px 0 24px;
         border-bottom: 1px solid #e8e8e8;
 
         &__wrap {
@@ -15,7 +15,7 @@
             display: flex;
             align-items: center;
             width: calc((100% / 3) - 20px);
-            margin: 0 10px;
+            margin: 0 10px 20px;
 
             .icon {
                 background-color: @green;
@@ -92,7 +92,7 @@
         }
     }
 
-    .tarrifs {
+    .tariffs {
         padding: 47px 0 78px;
 
         .block-title {
@@ -107,9 +107,11 @@
                 display: flex;
                 align-items: center;
                 width: calc(100% - 329px);
+                padding-right: 20px;
 
                 .icon {
                     width: 136px;
+                    min-width: 136px;
                     height: 120px;
                     display: flex;
                     justify-content: center;
@@ -203,6 +205,12 @@
 
         &__item {
             padding: 0 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .slick-arrow {
@@ -230,6 +238,127 @@
 
         &__next {
             right: -5px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .parking {
+        .icons {
+            .content {
+                h4 {
+                    font-size: 15px;
+                }
+            }
+        }
+        
+        .slider {
+            &__prev {
+                left: 0;
+            }
+    
+            &__next {
+                right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .parking {
+        .icons {
+            &__item {
+                width: calc((100% / 2) - 20px);
+            }
+        }
+
+        .descr {
+            padding: 40px 0 60px;
+
+            .wysiwyg {
+                width: 100%;
+                max-width: 768px;
+            }
+
+            .image {
+                display: none;
+            }
+        }
+
+        .tariffs {
+            &__item {
+                .content {
+                    .text {
+                        h3 {
+                            font-size: 17px;
+                        }
+
+                        p {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .parking {
+        .tariffs {
+
+            &__wrap {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -5px;
+            }
+            
+            &__item {
+                width: calc(50% - 10px);
+                margin: 0 5px;
+                margin-bottom: 10px;
+
+                .content {
+                    width: 100%;
+
+                    .icon {
+                        width: 100px;
+                        min-width: 100px;
+                    }
+
+                    .text {
+                        h3 {
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+                .price {
+                    width: 100%;
+                    height: 120px;
+                    margin-left: 0;
+
+                    p {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .parking {
+        .icons {
+            &__item {
+                width: calc((100% / 1) - 20px);
+            }
+        }
+
+        .tariffs {
+            &__item {
+                width: calc(100% - 10px);
+            }
         }
     }
 }
