@@ -150,6 +150,7 @@
 .rent-detail {
     .descr {
         padding: 51px 0;
+
         &__wrap {
             display: flex;
             flex-wrap: wrap;
@@ -231,6 +232,113 @@
             margin-bottom: 21px;
             font-size: 13px;
             font-weight: 300;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .rent-detail-intro {
+        .gallery {
+            width: 60%;
+        }
+
+        .slider {
+    
+            &__item {
+                height: 396px;
+            }
+        }
+
+        .info { 
+            width: 40%;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .rent-detail-intro {
+        .gallery {
+            width: 100%;
+        }
+
+        .info {
+            width: 100%;
+            max-width: 400px;
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 40px;
+        }
+    }
+
+    .rent-detail {
+        .descr {
+            padding: 20px 0 40px;
+
+            .content {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rent-detail-intro {
+        .gallery {
+            flex-wrap: wrap;
+        }
+
+        .slider {
+            order: 1;
+            width: 100%;
+        }
+
+        .slider-nav {
+            order: 2;
+            width: calc(100% + 10px);
+            margin: 10px -5px 0;
+
+            &__item {
+                padding: 0 5px;
+
+                &.slick-current {
+                    position: relative;
+    
+                    &:before {
+                        top: 0;
+                        left: 5px;
+                        width: calc(100% - 10px);
+                        height: 100%;
+                    }
+                }
+            }
+
+            .slick-arrow {
+                top: calc(50% - 20px);
+                left: auto;
+            }
+    
+            &__prev {
+                left: 0;
+                transform: rotate(-180deg);
+            }
+    
+            &__next {
+                right: 0;
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .rent-detail-intro {
+        .slider {
+    
+            &__item {
+                height: 300px;
+            }
         }
     }
 }

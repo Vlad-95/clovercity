@@ -271,7 +271,33 @@ $(document).ready(function() {
             vertical: true,
             infinite: false,
             prevArrow: '<button id="prev" type="button" class="slider-nav__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider-nav__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            nextArrow: '<button id="next" type="button" class="slider-nav__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            responsive: [{
+
+                breakpoint: 1201,
+                settings: {
+                  slidesToShow: 4,
+                }
+          
+            },{
+
+                breakpoint: 769,
+                settings: {
+                  slidesToShow: 4,
+                  vertical: false,
+                }
+          
+            },{
+
+                breakpoint: 577,
+                settings: {
+                  slidesToShow: 3,
+                  vertical: false,
+                }
+          
+            }
+            
+            ]
         });
     }
 
