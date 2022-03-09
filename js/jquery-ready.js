@@ -44,6 +44,20 @@ $(document).ready(function() {
 
     //============Мобильное меню (КОНЕЦ)
 
+    //открытие/закрытие модалок модалок
+    $('.js-open-modal').click(function () {
+        const modal = $(this).attr('data-modal');
+
+        body.addClass('no-scroll');
+        $(`.popup#${modal}`).fadeIn();
+    })
+
+    $('.popup .close').click(function () {
+        body.removeClass('no-scroll');
+        $('.popup').fadeOut();
+    })
+
+
     //Слайдер на главной
     if ($('.intro .slider').length) {
         $('.intro .slider').slick({

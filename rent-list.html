@@ -120,7 +120,7 @@
                         Респектабельность, удобство и безопасность офисной части МФК привлекают в Clover Citycenter представителей ключевых бизнес-структур Калининграда
                     </p>
 
-                    <a href="javascript:;" class="btn js-open">
+                    <a href="javascript:;" class="btn js-open-modal" data-modal="rent">
                         Оставить заявку на аренду
                         <svg>
                             <use xlink:href="img/icons/sprite.svg#arrow"></use>
@@ -591,7 +591,43 @@
         </div>
         
     </div>
-    
+    <div class="popup" id="rent">
+        <div class="popup__inner">
+            <div class="popup__wrap">
+                <h2 class="block-title block-title_underline">Заявка на аренду</h2>
+                <div class="close">
+                    <span></span><span></span>
+                </div>
+                <form action="" class="form">
+                    <div class="form__item">
+                        <p class="name">Ваше имя</p>
+                        <input type="text" name="name"class="input">
+                    </div>
+
+                    <div class="form__item">
+                        <p class="name">Ваш телефон *</p>
+                        <input type="text" name="phone" class="input">
+                    </div>
+
+                    <div class="form__footer">
+                        <label class="form__agree">
+                            <input type="checkbox" name="agree" id="">
+                            <p class="text">— я соглашаюсь с <a href="javascript:;">Политикой конфиденциальности</a></p>
+                        </label>
+
+                        <button class="form__submit">
+                            Отправить
+                            
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#arrow"></use>
+                            </svg>    
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
     <script src="js/libs/jquery-3.2.1.min.js"></script> 
 <script src="js/libs/jquery-ui.js"></script>
     <script src="js/libs/slick.min.js"></script>
