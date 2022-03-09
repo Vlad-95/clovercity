@@ -327,7 +327,27 @@ $(document).ready(function() {
             slidesToShow: 4,
             dots: false,
             prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            responsive: [{
+
+                breakpoint: 769,
+                settings: {
+                  slidesToShow: 3,
+                  
+                }
+          
+            },{
+
+                breakpoint: 577,
+                settings: {
+                  slidesToShow: 1,
+                  arrows: false,
+                  centerMode: true
+                }
+          
+            }
+            
+            ]
         });
     }
 });
