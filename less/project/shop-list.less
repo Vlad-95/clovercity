@@ -133,3 +133,47 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .shop-list {
+        &__item {
+            height: 220px;
+        }
+
+        .news-list {
+            .slider {
+                &__prev {
+                    left: 0;
+                }
+        
+                &__next {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .shop-list {
+        &__item {
+            width: calc((100% / 3) - 20px);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .shop-list {
+        &__item {
+            width: calc((100% / 2) - 20px);
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .shop-list {
+        &__item {
+            width: calc((100% / 1) - 20px);
+        }
+    }
+}
