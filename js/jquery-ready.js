@@ -394,6 +394,8 @@ $(document).ready(function() {
 
             $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
             $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
-        })
+        });
+
+        
     }
 });
