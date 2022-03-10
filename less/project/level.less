@@ -1,0 +1,97 @@
+.levels {
+    &__wrap {
+        position: relative;
+    }
+
+    .tabs {
+        display: flex;
+
+        &__item {
+            border: 2px solid @green;
+            color: @white;
+            font-size: 14px;
+            font-weight: 500;
+            color: @text;
+            padding: 11px 20px;
+            margin-right: 5px;
+            background-color: @white;
+            cursor: pointer;
+            border-radius: 100px;
+
+            &.active {
+                color: @white;
+                background-color: @green;
+            }
+        }
+    }
+
+    .dots {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        position: absolute;
+        right: 0;
+        top: 13px;
+
+        p {
+            margin: 0 0 43px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        &__item {
+            background-color: @white;
+            font-size: 18px;
+            font-weight: 700;
+            color: @text;
+            border: 2px solid @green;
+            width: 40px;
+            height: 40px;
+            border-radius: 100px;
+            text-align: center;
+            line-height: 2;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &.active {
+                background-color: @green;
+                color: @white;
+            }
+        }
+    }
+
+    .content {
+        &__item {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    .level {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    svg {
+        .free {
+            fill: #cbedeb;
+            cursor: pointer;
+        }
+
+        .disabled {
+            fill: #F3EE96;
+        }
+
+        .rented {
+            fill: #f3dddd;
+            cursor: pointer;
+        }
+    }
+}

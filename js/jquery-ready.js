@@ -382,4 +382,18 @@ $(document).ready(function() {
             ]
         });
     }
+
+    //Карта этажей
+    if ($('.levels').length) {
+        //клик по этажам
+        $('.dots .dots__item').click(function() {            
+            let levelNumb = $(this).attr('data-level');//Номер этажа           
+            let item = $(this).attr('data-item');//ТЦ или БЦ
+
+            $(this).addClass('active').siblings().removeClass('active');
+
+            $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+            $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
+        })
+    }
 });
