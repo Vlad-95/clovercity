@@ -1,6 +1,7 @@
 .levels {
     &__wrap {
         position: relative;
+        padding-bottom: 97px;
     }
 
     .tabs {
@@ -21,6 +22,43 @@
             &.active {
                 color: @white;
                 background-color: @green;
+            }
+        }
+    }
+
+    .markers {
+        position: absolute;
+        left: 0;
+        top: 85px;
+
+        &__item {
+            position: relative;
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 38px;
+            margin-bottom: 21px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                border: 2px solid @text;
+                border-radius: 5px;
+                left: 0;
+                top: -7px;
+            }
+
+            &_free {
+                &:before {
+                    background-color: #cbedeb;
+                }
+            }
+
+            &_rented {
+                &:before {
+                    background-color: #f3dddd;
+                }
             }
         }
     }
@@ -62,6 +100,7 @@
     }
 
     .content {
+        padding-right: 130px;
         &__item {
             display: none;
 
@@ -83,6 +122,11 @@
         .free {
             fill: #cbedeb;
             cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                fill: #2fb7ad;
+            }
         }
 
         .disabled {
@@ -91,7 +135,12 @@
 
         .rented {
             fill: #f3dddd;
+            transition: 0.3s;
             cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
         }
     }
 }

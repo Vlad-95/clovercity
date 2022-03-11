@@ -394,8 +394,36 @@ $(document).ready(function() {
 
             $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
             $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
+
+            $(`.tabs .tabs__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
         });
 
-        
+        //клик по табам
+        $('.tabs .tabs__item').click(function() {         
+            let item = $(this).attr('data-item');
+
+            $(this).addClass('active').siblings().removeClass('active');
+
+            if (item == "shop") {
+                $(`.level[data-level="1"]`).addClass('active').siblings().removeClass('active');
+                $('.dots .dots__item[data-level="1"]').addClass('active').siblings().removeClass('active');
+                $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+            }
+
+            if (item == "bussines") {
+                $(`.level[data-level="3"]`).addClass('active').siblings().removeClass('active');
+                $('.dots .dots__item[data-level="3"]').addClass('active').siblings().removeClass('active');
+                $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+            }
+            
+        })
     }
+
+    //клик по помещениям
+    $('.rented, .free').click(function() {
+        //прикрепленная ссылка к помещения
+        let href = $(this).attr('data-href');
+
+        document.location.href = href;
+    })
 });
