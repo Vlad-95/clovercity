@@ -51,3 +51,65 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .error-page {
+        .content {
+
+            h2 {
+                font-size: 150px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .error-page {
+        padding: 40px 0;
+
+        .image {
+            svg {
+                width: 270px;
+                height: 300px;
+            }
+        }
+
+        .content {
+            width: calc(100% - 270px);
+            padding-left: 60px;
+
+            h2 {
+                font-size: 100px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .error-page {
+        &__wrap {
+            display: block;
+        }
+
+        .image {
+            display: none;
+            svg {
+                width: 200px;
+                height: 183px;
+            }
+        }
+
+        .content {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+}
