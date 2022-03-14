@@ -446,7 +446,7 @@ $(document).ready(function() {
     //показ инфо во всплывашке
     function showInfo(target) {
         let type = target.attr('data-type');
-        const defaultLogo = '/img/plans-logo.png';
+        const defaultLogo = 'img/plans-logo.png';
         let logo = target.attr('data-logo');
         let square = target.attr('data-square');
         let href = target.attr('data-href');
