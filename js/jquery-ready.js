@@ -419,8 +419,28 @@ $(document).ready(function() {
             }
 
             $('.levels .info').hide();            
-        })
+        });
+
+        //показ активного этажа
+        if (localStorage.getItem('flat')) {
+            let levelNumb = localStorage.getItem('flat');
+
+            $(`.dots .dots__item[data-level=${levelNumb}]`).addClass('active').siblings().removeClass('active');
+
+            let item = $('.dots .dots__item.active').attr('data-item');
+            
+            $(`.tabs .tabs__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+            $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+            $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
+
+        }
     }
+
+    //клик на кнопку Показать на схеме
+    $('.js-flat').click(function() {
+        let flatNumb = $(this).attr('data-flat');
+        localStorage.setItem('flat', flatNumb);
+    })
 
     //клик по помещениям
     //показ инфо во всплывашке
