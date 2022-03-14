@@ -396,6 +396,8 @@ $(document).ready(function() {
             $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
 
             $(`.tabs .tabs__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+
+            $('.levels .info').hide();
         });
 
         //клик по табам
@@ -415,15 +417,85 @@ $(document).ready(function() {
                 $('.dots .dots__item[data-level="3"]').addClass('active').siblings().removeClass('active');
                 $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
             }
-            
+
+            $('.levels .info').hide();            
         })
     }
 
     //клик по помещениям
+    //показ инфо во всплывашке
+    function showInfo(target) {
+        let type = target.attr('data-type');
+        const defaultLogo = '/img/plans-logo.png';
+        let logo = target.attr('data-logo');
+        let square = target.attr('data-square');
+        let href = target.attr('data-href');
+        const popupInfo = $('.levels .info');
+
+        if (logo) {
+            popupInfo.find('img').attr('src', logo)
+        } else {
+            popupInfo.find('img').attr('src', defaultLogo)
+        }
+
+        if (type) {
+            popupInfo.find('h3').html(type);
+        } else {
+            popupInfo.find('h3').html('Офис');
+        }
+
+        if (square) {
+            popupInfo.find('p').html(`${square} м<sup>2</sup>`);
+        } else {
+            popupInfo.find('p').html(``);
+        }
+        
+        if (href) {
+            popupInfo.find('.link').show();
+            popupInfo.find('.link').attr('href', href);
+        } else {
+            popupInfo.find('.link').hide();
+        }          
+    }
+
     $('.rented, .free').click(function() {
         //прикрепленная ссылка к помещения
         let href = $(this).attr('data-href');
+        
+        if ($(window).width() > 992) {
+            document.location.href = href;
+        } else {
+            showInfo($(this));
+            $('.levels .info').fadeIn();
 
-        document.location.href = href;
-    })
+            $('html,body').stop().animate({ scrollTop: $('.levels .info').offset().top - $(window).height() + $('.levels .info').outerHeight()}, 300);
+        }        
+    });
+
+    if ($(window).width() > 992) {
+        //Наведение на помещения
+        $('.rented, .free').hover(function(evt) {
+            showInfo($(this));
+            
+        },function() {
+            $('.levels .info').hide();
+        })
+
+        $('.rented, .free').mousemove(function(evt) {
+            let clientX = evt.clientX;
+            let clientY = evt.clientY;
+            const popupInfo = $('.levels .info');
+            let popupInfoHeight = popupInfo.outerHeight();
+            const triangleHeight = 16;
+            const triangleLeft = 28;
+            console.log(popupInfoHeight)
+
+            popupInfo.css({
+                'left' : clientX - triangleLeft,
+                'top' : clientY - popupInfoHeight - triangleHeight,
+            })
+            
+            popupInfo.fadeIn();
+        })
+    }
 });

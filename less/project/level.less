@@ -4,6 +4,68 @@
         padding-bottom: 97px;
     }
 
+    .info {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: @white;
+        padding: 15px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        //width: 150px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 28px;
+            border: 8px solid transparent; 
+            border-left: 8px solid @white; 
+            border-top: 8px solid @white;
+            pointer-events: none;
+        }
+          
+
+        &__wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .image {
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            img {
+                display: block;
+            }
+        }
+
+        .text {
+            padding-left: 12px;
+        }
+
+        h3 {
+            margin: 0 0 5px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .link {
+            display: none!important;
+            margin-left: auto;
+            font-size: 14px;
+            color: @green;
+        }
+    }
+
     .tabs {
         display: flex;
 
@@ -141,6 +203,77 @@
             &:hover {
                 opacity: 0.5;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .levels {
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: -10px;
+            top: auto;
+            display: none;
+            width: calc(100% + 20px);
+
+            &:after {
+                display: none;
+            }
+
+            .link {
+                display: block;
+            }
+        }
+
+        .content {
+            padding-right: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .levels {
+        .markers {
+            left: auto;
+            right: 0;
+            top: 13px;
+        }
+        
+        .dots {
+            margin-top: 20px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            position: static;
+
+            p {
+                width: 100%;
+                margin: 0 0 10px;
+            }
+
+            &__item {
+                margin-right: 5px;
+            }
+        }
+
+        .content {
+            padding-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .levels {
+        .tabs {
+            &__item {
+                padding: 11px 18px;
+            }
+        }
+
+        .markers {
+            position: static;
+            margin-top: 20px;
         }
     }
 }
