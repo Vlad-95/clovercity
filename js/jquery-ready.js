@@ -163,8 +163,8 @@ $(document).ready(function() {
     if ($('#map').length) {
         ymaps.ready(init);
         function init(){
-           // Создание карты.
-           var myMap = new ymaps.Map("map", {                
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {                
                 center: [54.71978356995788,20.50384850000001],         
                 zoom: 16,
                 controls: []
@@ -177,6 +177,49 @@ $(document).ready(function() {
                 iconImageOffset: [-28, -45]
             });
 
+            var busCollection = new ymaps.GeoObjectCollection(null, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/icons/busstop-marker.png',
+                iconImageSize: [55, 57],
+                iconImageOffset: [-28, -45]
+            });
+
+            var busCoords = [];
+
+            let busHtmlItem = document.querySelectorAll('.busstops__item');
+            busHtmlItem.forEach(item => {
+                let itemCoordX = item.getAttribute('data-x');
+                let itemCoordY = item.getAttribute('data-y');
+
+                let itemCoordArr = [itemCoordX, itemCoordY];
+
+                busCoords.push(itemCoordArr);
+            });
+
+            for (var i = 0, l = busCoords.length; i < l; i++) {
+                busCollection.add(new ymaps.Placemark(busCoords[i]));
+            }
+
+            let showBusBtn = document.querySelector('.js-bus');
+            let flag = true;
+
+            if (showBusBtn) {
+                showBusBtn.addEventListener('click', () => {
+                    if (flag) {
+                        myMap.geoObjects.add(busCollection);
+    
+                        flag = false;
+                    } else {
+                        myMap.geoObjects.remove(busCollection);
+    
+                        flag = true;
+                    }
+                    
+                })
+            }
+            
+
+            
             myMap.geoObjects.add(myPlacemark);
             myMap.behaviors.disable('scrollZoom')
         }
