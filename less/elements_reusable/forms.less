@@ -140,6 +140,16 @@
                 top: -4px;
                 fill: @blue;
             }
+
+            &:after {
+                content: attr(data-filename);
+                position: absolute;
+                left: calc(100% + 20px);
+                top: 0;
+                font-size: 14px;
+                color: @green;
+
+            }
         }
     }
 
@@ -227,6 +237,19 @@
 
         &__agree {
             margin-bottom: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .form {
+        &__file {
+            .text {
+                &:after {
+                    left: 0;
+                    top: calc(100% + 10px);
+                }
+            }
         }
     }
 }

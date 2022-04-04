@@ -606,5 +606,12 @@ $(document).ready(function() {
             
             popupInfo.fadeIn();
         })
-    }
+    };
+
+    //Инпут файл
+    $('.form__file input').change(function() {
+        if ($('.form__file input')[0].files[0].name) {
+            $('.form__file .text').attr('data-filename', $('.form__file input')[0].files[0].name)
+        }  
+    })
 });
