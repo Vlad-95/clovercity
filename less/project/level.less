@@ -204,6 +204,22 @@
                 opacity: 0.5;
             }
         }
+
+        polygon:not(.rented, .disabled, .free),
+        rect:not(.rented, .disabled, .free),
+        path:not(.rented, .disabled, .free) {
+            fill: #DBDBDB;
+        }
+
+        .lines,
+        #lines,
+        .line,
+        #line {
+            & * {
+                fill: @black;
+            }
+        }
+
     }
 }
 

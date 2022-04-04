@@ -428,6 +428,20 @@ $(document).ready(function() {
 
     //Карта этажей
     if ($('.levels').length) {
+        //Проставляем статусы для помещений
+        
+        //перебираем объект с помещениями (ЗАДАЕТСЯ В ВЕРСТКЕ)
+        for (let key in rooms) {
+            //проставляем атрибуты для каждого помещения из объекта
+            $(`#${key}`)
+                .addClass(`${rooms[key].status}`)//статус
+                .attr('data-href', `${rooms[key].link}`)//ссылка
+                .attr('data-type', `${rooms[key].name}`)//название
+                .attr('data-logo', `${rooms[key].logo}`)//лого
+                .attr('data-square', `${rooms[key].square}`)//площадь
+        }
+
+
         //функция показа схемы соответствующего этажа
         showSchemeLevel = () => {
             let activeDot = $('.dots__item.active');
