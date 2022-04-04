@@ -462,8 +462,16 @@ $(document).ready(function() {
                 }
             });
 
-            //добавляем класс активности к наименьшему этажу
-            dotsItems.removeClass('active').not('[style="display: none;"]').last().addClass('active');
+            //при переходе со страниц магазинов
+            if (!localStorage.getItem('flat')) {
+                //добавляем класс активности к наименьшему этажу
+                dotsItems.removeClass('active').not('[style="display: none;"]').last().addClass('active');
+            } else {
+                //добавляем класс активности соответствующему этажу
+                let levelNumb = localStorage.getItem('flat');
+                $(`.dots .dots__item[data-level=${levelNumb}]`).addClass('active').siblings().removeClass('active');
+            }
+            
             
         }
 
@@ -498,26 +506,31 @@ $(document).ready(function() {
             $('.levels .info').hide();            
         });
 
-        //показ активного этажа
-        if (localStorage.getItem('flat')) {
-            let levelNumb = localStorage.getItem('flat');
-
-            $(`.dots .dots__item[data-level=${levelNumb}]`).addClass('active').siblings().removeClass('active');
-
+        //при переходе со страниц магазинов
+        if (localStorage.getItem('flat')) {          
             let item = $('.dots .dots__item.active').attr('data-item');
-            
-            $(`.tabs .tabs__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
-            $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
-            $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
 
+            showNumberLevels(localStorage.getItem('flatType'));
+            showSchemeLevel();
+
+            $(`.tabs .tabs__item[data-item="${localStorage.getItem('flatType')}"]`).addClass('active').siblings().removeClass('active');
+            $(`.content__item[data-item="${localStorage.getItem('flatType')}"]`).addClass('active').siblings().removeClass('active');
+           
         }
     }
 
     //клик на кнопку Показать на схеме
     $('.js-flat').click(function() {
         let flatNumb = $(this).attr('data-flat');
+        let flatType = $(this).attr('data-item');
+
         localStorage.setItem('flat', flatNumb);
+        localStorage.setItem('flatType', flatType);
     })
+
+    setTimeout(() => {
+        localStorage.removeItem('flat');
+    }, 1000)
 
     //клик по помещениям
     //показ инфо во всплывашке
@@ -585,7 +598,6 @@ $(document).ready(function() {
             let popupInfoHeight = popupInfo.outerHeight();
             const triangleHeight = 16;
             const triangleLeft = 28;
-            console.log(popupInfoHeight)
 
             popupInfo.css({
                 'left' : clientX - triangleLeft,
