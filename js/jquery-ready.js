@@ -613,5 +613,28 @@ $(document).ready(function() {
         if ($('.form__file input')[0].files[0].name) {
             $('.form__file .text').attr('data-filename', $('.form__file input')[0].files[0].name)
         }  
-    })
+    });
+
+    //Фильтр Магазинов
+    if ($('.filter').length) {
+        const filterItem = $('.filter__item');
+        const shopItem = $('.shop-list__item');
+
+        filterItem.click(function() {
+            let filteredCat = $(this).attr('data-filter');
+
+            $(this).addClass('active').siblings().removeClass('active')
+            
+            shopItem.each(function () {
+                let cats = $(this).attr('data-filter');
+
+                if (cats.indexOf(filteredCat) != -1) {
+                    $(this).fadeIn();
+                } else {
+                    $(this).hide();
+                }
+            })           
+
+        });
+    }
 });
