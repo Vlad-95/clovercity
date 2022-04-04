@@ -428,17 +428,41 @@ $(document).ready(function() {
 
     //Карта этажей
     if ($('.levels').length) {
+        //функция показа схемы соответствующего этажа
+        showSchemeLevel = () => {
+            let activeDot = $('.dots__item.active');
+
+            $(`.level[data-level="${activeDot.attr("data-level")}"]`).addClass('active').siblings().removeClass('active');
+        }
+
+        //функция показа номеров этажей относящихся к данному табу
+        showNumberLevels = (tab = 'shop') => {
+            let dotsItems = $('.dots__item');
+
+            //перебираем и показываем нужные
+            dotsItems.each(function() {
+                if ($(this).attr('data-item') == tab || $(this).attr('data-item') == 'both') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            //добавляем класс активности к наименьшему этажу
+            dotsItems.removeClass('active').not('[style="display: none;"]').last().addClass('active');
+            
+        }
+
+        // вызываем функцию при загрузке
+        showNumberLevels();
+
         //клик по этажам
         $('.dots .dots__item').click(function() {            
             let levelNumb = $(this).attr('data-level');//Номер этажа           
-            let item = $(this).attr('data-item');//ТЦ или БЦ
 
             $(this).addClass('active').siblings().removeClass('active');
 
-            $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
             $(`.level[data-level="${levelNumb}"]`).addClass('active').siblings().removeClass('active');
-
-            $(`.tabs .tabs__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
 
             $('.levels .info').hide();
         });
@@ -447,19 +471,15 @@ $(document).ready(function() {
         $('.tabs .tabs__item').click(function() {         
             let item = $(this).attr('data-item');
 
-            $(this).addClass('active').siblings().removeClass('active');
+            $(this).addClass('active').siblings().removeClass('active'); //меняем активность табов
 
-            if (item == "shop") {
-                $(`.level[data-level="1"]`).addClass('active').siblings().removeClass('active');
-                $('.dots .dots__item[data-level="1"]').addClass('active').siblings().removeClass('active');
-                $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
-            }
+            showNumberLevels(item);//функция показа номеров этажей относящихся к данному табу
 
-            if (item == "bussines") {
-                $(`.level[data-level="3"]`).addClass('active').siblings().removeClass('active');
-                $('.dots .dots__item[data-level="3"]').addClass('active').siblings().removeClass('active');
-                $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
-            }
+            //показываем группу схем
+            $(`.content__item[data-item="${item}"]`).addClass('active').siblings().removeClass('active');
+
+            //показ схемы
+            showSchemeLevel()
 
             $('.levels .info').hide();            
         });
