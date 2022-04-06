@@ -236,6 +236,38 @@
         .block-title {
             margin: 0 0 25px;
         }
+
+        .slider {
+            margin-bottom: 33px;
+            
+            .slick-arrow {
+                position: absolute;
+                top: calc(50% - 25px);
+                border: none;
+                background: @green;
+                padding: 0 0 0 3px;
+                width: 32px;
+                height: 32px;
+                border-radius: 100px;
+                z-index: 2;
+    
+                svg {
+                    width: 9px;
+                    height: 15px;
+                    fill: @white;
+                }
+            }
+    
+            &__prev  {
+                left: -5px;
+                transform: rotate(180deg);
+            }
+    
+            &__next  {
+                right: -5px;
+            }
+        }
+        
     }
 
     .similar {
@@ -368,6 +400,18 @@
                     right: -10px;
                 }
             }
+        }
+
+        .news-list {
+            .slider {
+                &__prev  {
+                    left: 0;
+                }
+        
+                &__next  {
+                    right: 0;
+                }
+            }            
         }
 
         .similar {
