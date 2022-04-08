@@ -501,12 +501,15 @@ $(document).ready(function() {
                 let levelNumb = localStorage.getItem('flat');
                 $(`.dots .dots__item[data-level=${levelNumb}]`).addClass('active').siblings().removeClass('active');
             }
-            
-            
         }
 
         // вызываем функцию при загрузке
-        showNumberLevels();
+        if (!$('.tabs__item[data-item="shop"]').length) {
+            showNumberLevels('bussines');
+        } else {
+            showNumberLevels();
+        }
+        
 
         //клик по этажам
         $('.dots .dots__item').click(function() {            
