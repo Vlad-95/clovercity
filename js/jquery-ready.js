@@ -505,7 +505,7 @@ $(document).ready(function() {
 
         // вызываем функцию при загрузке
         if (!$('.tabs__item[data-item="shop"]').length) {
-            showNumberLevels('bussines');
+            showNumberLevels('business');
         } else {
             showNumberLevels();
         }
