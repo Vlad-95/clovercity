@@ -38,6 +38,10 @@
             width: 100%;
             font-size: 14px;
             font-weight: 300;
+
+            &.error {
+                border-color: red;
+            }
         }
 
         .input {
@@ -71,6 +75,10 @@
 
             &:checked + .text:after {
                 opacity: 1;
+            }
+
+            &.error + .text:before {
+                border-color: red;
             }
         }
 
