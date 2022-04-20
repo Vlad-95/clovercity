@@ -170,11 +170,14 @@ $(document).ready(function() {
                 controls: []
             });
 
-            var myPlacemark = new ymaps.Placemark([54.71978356995788,20.50384850000001], {}, {
+            var myPlacemark = new ymaps.Placemark([54.71978356995788,20.50384850000001], {
+            
+                balloonContentBody: "Площадь Победы, 10",
+            }, {
                 iconLayout: 'default#image',
                 iconImageHref: 'img/icons/map-marker.png',
                 iconImageSize: [55, 57],
-                iconImageOffset: [-28, -45]
+                iconImageOffset: [-28, -45],
             });
 
             var busCollection = new ymaps.GeoObjectCollection(null, {
@@ -184,20 +187,28 @@ $(document).ready(function() {
                 iconImageOffset: [-28, -45]
             });
 
-            var busCoords = [];
+            var busItems = [];
 
             let busHtmlItem = document.querySelectorAll('.busstops__item');
             busHtmlItem.forEach(item => {
                 let itemCoordX = item.getAttribute('data-x');
                 let itemCoordY = item.getAttribute('data-y');
+                let itemBaloon = item.getAttribute('data-baloon');
 
                 let itemCoordArr = [itemCoordX, itemCoordY];
 
-                busCoords.push(itemCoordArr);
+                busItems.push({
+                    baloon: itemBaloon,
+                    coords: itemCoordArr
+                });
+
+                
             });
 
-            for (var i = 0, l = busCoords.length; i < l; i++) {
-                busCollection.add(new ymaps.Placemark(busCoords[i]));
+            for (var i = 0, l = busItems.length; i < l; i++) {
+                busCollection.add(new ymaps.Placemark(busItems[i].coords, {
+                    balloonContentBody: busItems[i].baloon,
+                }));
             }
 
             let showBusBtn = document.querySelector('.js-bus');
