@@ -159,6 +159,11 @@ $(document).ready(function() {
         });   
     }
 
+    //одинаковая высота карточек помещений
+    if ($('.rent-list__item').length) {
+        $('.rent-list__item .content').matchHeight()
+    }
+
     //карта
     if ($('#map').length) {
         ymaps.ready(init);
@@ -648,6 +653,13 @@ $(document).ready(function() {
             })
             
             popupInfo.fadeIn();
+        })
+
+        //прячем всплывашку при скролле
+        $(window).scroll(function () {
+            const popupInfo = $('.levels .info');
+
+            popupInfo.fadeOut();
         })
     };
 
