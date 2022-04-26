@@ -692,4 +692,22 @@ $(document).ready(function() {
 
         });
     }
+
+    //Запрет на ввод символов в форме
+    $('[name=phone]').bind('change keyup input click', function () {
+        if (this.value.match(/[^0-9]/g)) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        }
+    });
+
+    $('[name=email]').bind('change keyup input click', function() {
+        let emailPattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
+
+        if($('[name=email]').val().search(emailPattern) != 0){
+            $(this).addClass('error')
+        } else {
+            $(this).removeClass('error');
+        }
+	});
+    
 });
