@@ -94,8 +94,8 @@ $(document).ready(function() {
         $('.partners .slider').slick({
             slidesToShow: 6,
             dots: false,
-            prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
 
             responsive: [{
 
@@ -129,8 +129,8 @@ $(document).ready(function() {
         $('.rent-list.mainpage .slider').slick({
             slidesToShow: 4,
             dots: false,
-            prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
 
             responsive: [{
 
@@ -175,19 +175,23 @@ $(document).ready(function() {
                 controls: []
             });
 
+            var placemarkLayout = ymaps.templateLayoutFactory.createClass('<div class="custom-placemark"><div class="custom-placemark__wrap">Кловер Сити-Центр</div></div>');
+
             var myPlacemark = new ymaps.Placemark([54.71978356995788,20.50384850000001], {
-            
                 balloonContentBody: "Площадь Победы, 10",
             }, {
-                iconLayout: 'default#image',
-                iconImageHref: 'img/icons/map-marker.png',
-                iconImageSize: [55, 57],
-                iconImageOffset: [-28, -45],
+                iconLayout: placemarkLayout,
+                iconShape: {
+                    type: 'Rectangle',
+                    coordinates: [
+                        [-83, -37], [83, 0]
+                    ]
+                }
             });
 
             var busCollection = new ymaps.GeoObjectCollection(null, {
                 iconLayout: 'default#image',
-                iconImageHref: 'img/icons/busstop-marker.png',
+                iconImageHref: '/img/icons/busstop-marker.png',
                 iconImageSize: [55, 57],
                 iconImageOffset: [-28, -45]
             });
@@ -206,8 +210,6 @@ $(document).ready(function() {
                     baloon: itemBaloon,
                     coords: itemCoordArr
                 });
-
-                
             });
 
             for (var i = 0, l = busItems.length; i < l; i++) {
@@ -246,8 +248,8 @@ $(document).ready(function() {
         $('.about .slider').slick({
             slidesToShow: 3,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
             responsive: [
             {
                 breakpoint: 769,
@@ -273,8 +275,8 @@ $(document).ready(function() {
         $('.news-detail .slider').slick({
             slidesToShow: 3,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
 
             responsive: [
                 {
@@ -301,8 +303,8 @@ $(document).ready(function() {
         $('.parking .slider').slick({
             slidesToShow: 3,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
 
             responsive: [
                 {
@@ -343,8 +345,8 @@ $(document).ready(function() {
             focusOnSelect: true,
             vertical: true,
             infinite: false,
-            prevArrow: '<button id="prev" type="button" class="slider-nav__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider-nav__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider-nav__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider-nav__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
             responsive: [{
 
                 breakpoint: 1201,
@@ -379,8 +381,8 @@ $(document).ready(function() {
         $('.shop-list .news-list .slider').slick({
             slidesToShow: 3,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
 
             responsive: [
                 {
@@ -407,8 +409,8 @@ $(document).ready(function() {
         $('.shop-detail .gallery .slider').slick({
             slidesToShow: 1,
             fade: true,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>'
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>'
         });
     }
 
@@ -417,8 +419,8 @@ $(document).ready(function() {
         $('.shop-detail .news-list .slider').slick({
             slidesToShow: 3,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
             responsive: [{
 
                 breakpoint: 769,
@@ -447,8 +449,8 @@ $(document).ready(function() {
         $('.similar .slider').slick({
             slidesToShow: 4,
             dots: false,
-            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
-            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="img/icons/sprite.svg#chevron"></use></svg></button>',
+            prevArrow: '<button id="prev" type="button" class="slider__prev"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
+            nextArrow: '<button id="next" type="button" class="slider__next"><svg><use xlink:href="/img/icons/sprite.svg#chevron"></use></svg></button>',
             responsive: [{
 
                 breakpoint: 769,
@@ -568,23 +570,23 @@ $(document).ready(function() {
     }
 
     //клик на кнопку Показать на схеме
-    $('.js-flat').click(function() {
-        let flatNumb = $(this).attr('data-flat');
-        let flatType = $(this).attr('data-item');
+    // $('.js-flat').click(function() {
+    //     let flatNumb = $(this).attr('data-flat');
+    //     let flatType = $(this).attr('data-item');
 
-        localStorage.setItem('flat', flatNumb);
-        localStorage.setItem('flatType', flatType);
-    })
+    //     localStorage.setItem('flat', flatNumb);
+    //     localStorage.setItem('flatType', flatType);
+    // })
 
-    setTimeout(() => {
-        localStorage.removeItem('flat');
-    }, 1000)
+    // setTimeout(() => {
+    //     localStorage.removeItem('flat');
+    // }, 1000)
 
     //клик по помещениям
     //показ инфо во всплывашке
     function showInfo(target) {
         let type = target.attr('data-type');
-        const defaultLogo = 'img/plans-logo.png';
+        const defaultLogo = '/local/templates/clover/img/plans-logo.png';
         let logo = target.attr('data-logo');
         let square = target.attr('data-square');
         let href = target.attr('data-href');
@@ -616,12 +618,15 @@ $(document).ready(function() {
         }          
     }
 
-    $('.rented, .free').click(function() {
+    $('.rented, .free, .hotel').click(function() {
         //прикрепленная ссылка к помещения
         let href = $(this).attr('data-href');
         
         if ($(window).width() > 992) {
-            document.location.href = href;
+            if (href) {
+                document.location.href = href;
+            }
+            
         } else {
             showInfo($(this));
             $('.levels .info').fadeIn();
@@ -632,14 +637,14 @@ $(document).ready(function() {
 
     if ($(window).width() > 992) {
         //Наведение на помещения
-        $('.rented, .free').hover(function(evt) {
+        $('.rented, .free, .hotel').hover(function(evt) {
             showInfo($(this));
             
         },function() {
             $('.levels .info').hide();
         })
 
-        $('.rented, .free').mousemove(function(evt) {
+        $('.rented, .free, .hotel').mousemove(function(evt) {
             let clientX = evt.clientX;
             let clientY = evt.clientY;
             const popupInfo = $('.levels .info');
@@ -709,5 +714,4 @@ $(document).ready(function() {
             $(this).removeClass('error');
         }
 	});
-    
 });
