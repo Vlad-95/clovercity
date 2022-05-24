@@ -714,4 +714,12 @@ $(document).ready(function() {
             $(this).removeClass('error');
         }
 	});
+
+    //Баннер при первом заходе на сайт.
+    if (!localStorage.getItem('showBanner') && $(`.popup#banner`).length) {
+        body.addClass('no-scroll');
+        $(`.popup#banner`).fadeIn();
+
+        localStorage.setItem('showBanner', true);
+    }
 });
