@@ -716,10 +716,22 @@ $(document).ready(function() {
 	});
 
     //Баннер при первом заходе на сайт.
-    if (!localStorage.getItem('showBanner') && $(`.popup#banner`).length) {
-        body.addClass('no-scroll');
-        $(`.popup#banner`).fadeIn();
+    // if (!localStorage.getItem('showBanner') && $(`.popup#banner`).length) {
+    //     body.addClass('no-scroll');
+    //     $(`.popup#banner`).fadeIn();
 
-        localStorage.setItem('showBanner', true);
-    }
+    //     localStorage.setItem('showBanner', true);
+    // }
+
+    //боковой баннер
+    $('.popup-side-toggle').click(function() {
+        body.addClass('no-scroll');
+        $('.popup-side').addClass('active');
+    })
+    $('.popup-side .close').click(function() {
+        body.removeClass('no-scroll');
+        $(this).closest('.popup-side').removeClass('active');
+    })
+
+    
 });

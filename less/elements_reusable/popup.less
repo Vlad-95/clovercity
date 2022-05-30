@@ -90,8 +90,171 @@
     }
 }
 
+
+.popup-side-toggle {
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    width: 60px;
+    height: 60px;
+    background-color: @green;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        display: block;
+    }
+}
+
+.popup-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+    transition: 0.3s;
+
+    .block-title {
+        margin: 0 0 45px;
+    }
+
+    &.active {
+        background-color: fade(@blue, 80%);
+        transition: 0.3s;
+        pointer-events: all;
+        overflow-y: auto;
+
+        .popup-side__wrap {
+            transform: translateX(0);
+            transition: 0.3s;
+            // position: static;
+        }
+    }
+
+    &__inner {
+        padding: 40px 0 60px 70px;        
+        position: relative;
+        // overflow: hidden;
+    }
+
+    &__wrap {
+        background-color: @white;
+        width: 100%;
+        max-width: 780px;
+        margin: 0 0 0 auto;
+        transform: translateX(840px);
+        padding: 60px 80px;
+        position: relative;
+        right: 0;
+        transition: 0.3s;
+        pointer-events: all;
+
+        .close {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background-color: @green;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                width: 34px;
+                height: 34px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 3px solid @white;
+                border-radius: 100px;
+            }
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 17px;
+            height: 2px;
+            background-color: @white;
+
+            &:nth-of-type(1) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+                transform: rotate(-45deg);
+            }
+        }
+
+        .image {
+            margin-bottom: 24px;
+        }
+
+        .wysiwyg {
+            margin-bottom: 19px;
+            p {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1.75;
+            }            
+        }
+
+        .link {
+            font-size: 12px;
+            font-weight: 500;
+            color: @green;
+    
+            .arrow {
+                display: inline-block;
+                vertical-align: middle;
+                width: 20px;
+                height: 14px;
+                fill: @green;
+                margin-left: 7px;
+                transform: translateX(0);
+                transition: 0.3s;
+            }
+    
+            &:hover {
+                .arrow {
+                    transform: translateX(5px);
+                }            
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .popup-side {
+        &__wrap {
+            max-width: 506px;
+            transform: translateX(566px);
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .popup {
+        &__wrap {
+            padding: 60px 40px;
+        }
+    }
+
+    .popup-side {
         &__wrap {
             padding: 60px 40px;
         }
@@ -102,6 +265,42 @@
     .popup {
         &__wrap {
             padding: 40px 20px;
+        }
+    }
+
+    .popup-side-toggle {
+        width: 40px;
+        height: 40px;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .popup-side {
+        .block-title {
+            font-size: 20px;
+        }
+        &__wrap {
+            max-width: 250px;
+            padding: 40px 20px;
+            transform: translateX(310px);
+
+            .close {
+                left: -40px;
+                width: 40px;
+                height: 40px;
+
+                &:after {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            span {
+                width: 12px;
+            }
         }
     }
 }
