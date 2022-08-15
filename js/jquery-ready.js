@@ -1,28 +1,30 @@
 $(document).ready(function() {
     //===========Мобильное меню
+    // const windowWidth = window.innerWidth;
+    // const header = $('.header');
+    // const mobileMenu = $('.mobile-menu');
+    // const smMenu = header.find('.sm-menu');
+    // const city = header.find('.city');
+    // const icons = header.find('.icons');
+    // const smLogo = header.find('.sm-logo');
+    // const phones = header.find('.phones');
+    // const search = header.find('.search');
+    // const menu = header.find('.nav');
     const body = $('body');
-    const windowWidth = window.innerWidth;
     const header = $('.header');
     const mobileMenu = $('.mobile-menu');
-    const smMenu = header.find('.sm-menu');
-    const city = header.find('.city');
-    const icons = header.find('.icons');
-    const smLogo = header.find('.sm-logo');
-    const phones = header.find('.phones');
-    const search = header.find('.search');
-    const menu = header.find('.nav');
     const burger = header.find('.burger');
     const mobileMenuClose = mobileMenu.find('.close');
     const layer = body.find('.layer');
 
-    if (windowWidth <= 992) {        
-        mobileMenu.find('.mobile-menu__wrap').append(smMenu.clone()); 
-        mobileMenu.find('.mobile-menu__wrap').append(menu.clone()); 
-        mobileMenu.find('.mobile-menu__wrap').append(city.clone()); 
-        mobileMenu.find('.mobile-menu__wrap').append(phones.clone()); 
-        mobileMenu.find('.mobile-menu__wrap').append(icons.clone()); 
-        mobileMenu.find('.mobile-menu__wrap').append(search.clone());               
-    }
+    // if (windowWidth <= 992) {        
+    //     mobileMenu.find('.mobile-menu__wrap').append(smMenu.clone()); 
+    //     mobileMenu.find('.mobile-menu__wrap').append(menu.clone()); 
+    //     mobileMenu.find('.mobile-menu__wrap').append(city.clone()); 
+    //     mobileMenu.find('.mobile-menu__wrap').append(phones.clone()); 
+    //     mobileMenu.find('.mobile-menu__wrap').append(icons.clone()); 
+    //     mobileMenu.find('.mobile-menu__wrap').append(search.clone());               
+    // }
 
     function showMenu() {
         body.addClass('no-scroll');
